@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+	<title>Test Header</title>
+  <style>
+  body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1a1a1a;
+}
+
+#site {
+  padding: 75px 150px;
+  min-height: 2500px;
+}
+
+#video-test {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+audio {
+  margin: 30px 0;
+}
+
+#bkgd {
+  display: none;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+#bkgd video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  </style>
+</head>
+<body>
+<div id="site">
+  <h1>Interactive Header Demo</h1>
+  <video id="video-test" controls>
+    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id venenatis a condimentum vitae sapien pellentesque habitant. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Habitasse platea dictumst vestibulum rhoncus est.</p>
+  <p>Quam quisque id diam vel quam elementum pulvinar etiam. Ac felis donec et odio pellentesque diam volutpat commodo sed. At in tellus integer feugiat scelerisque varius morbi enim. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Felis imperdiet proin fermentum leo vel orci porta non.</p>
+  <audio controls>
+    <source src="https://lasonotheque.org/UPLOAD/mp3/0267.mp3"></source>
+  </audio>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id venenatis a condimentum vitae sapien pellentesque habitant. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Habitasse platea dictumst vestibulum rhoncus est.</p>
+  <p>Quam quisque id diam vel quam elementum pulvinar etiam. Ac felis donec et odio pellentesque diam volutpat commodo sed. At in tellus integer feugiat scelerisque varius morbi enim. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Felis imperdiet proin fermentum leo vel orci porta non.</p>
+ <div id="bkgd">
+   <video autoplay loop muted>
+     <source type="video/mp4" src="https://vod-progressive.akamaized.net/exp=1599085365~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F909%2F17%2F429549431%2F1865341735.mp4~hmac=b9639d276dcf3f823b754f156fb03ec266d18fd03c108b9e552244085babf5cc/vimeo-prod-skyfire-std-us/01/909/17/429549431/1865341735.mp4?filename=production+ID%3A4667210.mp4">
+   </video>
+ </div>
+</div>
+<script async src="https://interactive-pip-dev.nfb.ca/v2/app.js"></script>
+<script>
+document.addEventListener('ifw_headerLoaded', () => {
+  // see draft doc here: https://gist.github.com/cboissel-onf/73094ff690c06495cc18f3a2c2a006eb
+  window.ifw_header.init({
+    projectId: 117,
+    // onlyAnalytics: true,
+    devMode: true,
+    logoPosition: 'left',    
+    openInNewWindow: {
+      grid: true,
+      about: false
+    },
+    baseUrl: {
+      en: "http://grasslands.nfb.ca/",
+      fr: "http://laplaine.onf.ca/"
+    },
+    theme: 'black',
+    transparent: false,
+    hideOnScroll: false,
+    hideOnNoActivity: false,
+    // hideOnNoActivity: true, // default 2500ms
+    // hideOnNoActivity: 5000,
+    buttons: {
+      grid: true,
+      about: true,
+      switchLang: true,
+      toggleSound: true,
+      toggleFullscreen: true,
+      shareFB: true,
+      shareTwitter: true
+    },
+  })
+})
+</script>
+</body>
